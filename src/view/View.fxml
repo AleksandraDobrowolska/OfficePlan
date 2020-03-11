@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WindowController">
+   <children>
+      <Group fx:id="textFieldsGroup" layoutX="376.0" layoutY="28.0">
+         <children>
+            <VBox fx:id="startTimeVBox" layoutX="210.0">
+               <children>
+                  <Label fx:id="startTimeLabel" text="Start time" />
+                  <TextField fx:id="startTimeTextField" />
+               </children>
+            </VBox>
+            <VBox fx:id="endTimeVBox" layoutX="210.0" layoutY="61.0">
+               <children>
+                  <Label fx:id="endTimeLabel" text="End time" />
+                  <TextField fx:id="endTimeTextField" />
+               </children>
+            </VBox>
+            <VBox fx:id="nameVBox">
+               <children>
+                  <Label fx:id="nameLabel" text="Name" />
+                  <TextField fx:id="nameTextField" />
+               </children>
+            </VBox>
+            <VBox fx:id="surnameVBox" layoutY="61.0">
+               <children>
+                  <Label fx:id="surnameLabel" text="Surname" />
+                  <TextField fx:id="surnameTextField" />
+               </children>
+            </VBox>
+            <VBox fx:id="roomNumberVBox" layoutY="122.0">
+               <children>
+                  <Label fx:id="roomNumberLabel" text="Room number" />
+                  <TextField fx:id="roomNumberTextField" />
+               </children>
+            </VBox>
+         </children>
+      </Group>
+      <VBox fx:id="buttonsVBox" layoutX="28.0" layoutY="43.0" spacing="25.0">
+         <children>
+            <Button fx:id="loadButton" mnemonicParsing="false" onAction="#handleLoadButton" prefWidth="65.0" text="Load" />
+            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#handleSaveButton" prefWidth="65.0" text="Save" />
+            <Button fx:id="addButton" mnemonicParsing="false" onAction="#handleAddButton" prefWidth="65.0" text="Add" />
+            <Button fx:id="reportButton" mnemonicParsing="false" onAction="#handleReportButton" prefWidth="65.0" text="Report" />
+         </children>
+         <padding>
+            <Insets top="25.0" />
+         </padding>
+      </VBox>
+      <TableView fx:id="tableView" layoutX="106.0" layoutY="27.0" prefHeight="447.0" prefWidth="260.0">
+        <columns>
+          <TableColumn fx:id="nameColumn" prefWidth="90.0" text="Name" />
+          <TableColumn fx:id="surnameColumn" prefWidth="105.0" text="Surname" />
+            <TableColumn fx:id="roomColumn" prefWidth="60.0" text="Room" />
+        </columns>
+      </TableView>
+      <Group layoutX="376.0" layoutY="211.0">
+         <children>
+            <Group />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="207.0" layoutY="25.0" stroke="BLACK" width="404.0" />
+            <Label layoutX="10.0" layoutY="1.0" text="OfficePlan" />
+            <Rectangle fx:id="roomNo1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="101.0" layoutX="26.0" layoutY="32.0" stroke="BLACK" strokeType="INSIDE" width="99.0" />
+            <Rectangle fx:id="roomNo3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="73.0" layoutX="12.0" layoutY="151.0" stroke="BLACK" strokeType="INSIDE" width="161.0" />
+            <Rectangle fx:id="roomNo4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="42.0" layoutX="230.0" layoutY="152.0" stroke="BLACK" strokeType="INSIDE" width="115.0" />
+            <Rectangle fx:id="roomNo2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="73.0" layoutX="175.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="175.0" />
+            <Label fx:id="roomNo1Label" layoutX="47.0" layoutY="73.0" text="roomNo1" visible="false" />
+            <Label fx:id="roomNo3Label" layoutX="63.0" layoutY="180.0" text="roomNo3" visible="false" />
+            <Label fx:id="roomNo2Label" layoutX="230.0" layoutY="70.0" text="roomNo2" visible="false" />
+            <Label fx:id="roomNo4Label" layoutX="260.0" layoutY="167.0" text="roomNo4" visible="false" />
+         </children>
+      </Group>
+      <Label fx:id="noRoomWithThisNumberLabel" layoutX="397.0" layoutY="456.0" text="There's no room with this number!" textFill="#f20707" visible="false" />
+   </children>
+</AnchorPane>
